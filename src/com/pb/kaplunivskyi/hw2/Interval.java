@@ -12,10 +12,12 @@ public class Interval {
                 System.out.print("диапазон[0-14]");
             } else if (x >= 15 && x <= 35) {
                 System.out.print("диапазон[15-35]");
-            } else if (x > 36 && x <= 50) {
+            } else if (x >= 36 && x <= 50) {
                 System.out.print("диапазон[36-50]");
-            } else if (x > 51 && x <= 100) {
+            } else if (x >= 51 && x <= 100) {
                 System.out.print("диапазон[51-100]");
+            } if (x<=-1 && x >= 101) {
+                System.out.print("Мимо");
             }
         }
 
