@@ -7,7 +7,7 @@ public class Interval {
         int x;
         System.out.println("Введите числа из диапазона от 0 до 100");
         x = scan.nextInt();
-        if (x == 0 || x < 100) {
+        if (x == 0 || x < 101) {
             if (x <= 14) {
                 System.out.print("диапазон[0-14]");
             } else if (x >= 15 && x <= 35) {
@@ -16,8 +16,6 @@ public class Interval {
                 System.out.print("диапазон[36-50]");
             } else if (x >= 51 && x <= 100) {
                 System.out.print("диапазон[51-100]");
-            } if (x<=-1 && x >= 101) {
-                System.out.print("Мимо");
             }
         }
 
