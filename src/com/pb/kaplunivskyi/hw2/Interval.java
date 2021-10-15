@@ -5,7 +5,7 @@ public class Interval {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int x;
-        System.out.println("Пожалуйста введите числа из диапазона от 0 до 100");
+        System.out.println("Введите числа из диапазона от 0 до 100");
         x = scan.nextInt();
         if (x == 0 || x < 100) {
             if (x <= 14) {
