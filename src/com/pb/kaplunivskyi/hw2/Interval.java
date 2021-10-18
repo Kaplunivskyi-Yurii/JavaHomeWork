@@ -17,7 +17,8 @@ public class Interval {
             } else if (x >= 51 && x <= 100) {
                 System.out.print("диапазон[51-100]");
             }
-        }else if (x>=101) {
+        }else if (x>=101);
+        if (x<=-1){
             System.out.print("Error.Написано же от 0 до 100");
         }
 
