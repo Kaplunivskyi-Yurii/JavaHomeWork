@@ -32,11 +32,10 @@ public class Calculator {
                 break;
 
             case "/":
-                System.out.println(+(operand1 / operand2));
-            {
-                if (operand2 == 0) ;
-                System.out.println("Ошибочка у тебя вышла");
-            }
+                if (operand2 == 0)
+                    System.out.println("Ошибочка у тебя вышла");
+                else
+                    System.out.println(+(operand1 / operand2));
                 break;
 
             default: {
