@@ -1,33 +1,49 @@
 package com.pb.kaplunivskyi.hw4;
-
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Map;
-import java.util.HashMap;
 
 public class Anagram {
-    public boolean myMethod(String firstWord, String secondWord){
-        Scanner scan = new Scanner(System.in);
-        String str1 = scan.nextLine();
-        String str2 = scan.nextLine();
 
-        char[] word1 = str1.toCharArray();
-        char[] word2 = str2.toCharArray();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input first string: ");
+        String str1 = scanner.nextLine();
+        System.out.println("Input second string: ");
+        String str2 = scanner.nextLine();
 
-        Map<Character, Integer> lettersInWord1 = new HashMap<Character, Integer>();
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
 
-        for (char c : word1) {
-            int count = 1;
-            if (lettersInWord1.containsKey(c)) {
-                count = lettersInWord1.get(c) + 1;
-            }
-            lettersInWord1.put(c, count);
+        // через регулярное выражение
+        // str1 = str1.replaceAll("[^\\p{L}]", "");
+
+        str1 = removeNotLetters(str1);
+        str2 = removeNotLetters(str2);
+
+        char[] chars1 = str1.toCharArray();
+        char[] chars2 = str2.toCharArray();
+
+        Arrays.sort(chars1);
+        Arrays.sort(chars2);
+
+        // не правильное сравнение массивов
+        // chars1.equals(chars2) то же самое, что и chars1 == chars2
+
+        if (Arrays.equals(chars1, chars2)) {
+            System.out.println("Anagram detected!");
+        } else {
+            System.out.println("No anagram found!");
         }
-        for (char c :word2) {
-            int count = -1;
-            if (lettersInWord1.containsKey(c)) {
-                count = lettersInWord1.get(c) - 1;
+    }
+
+    private static String removeNotLetters(String str) {
+        char[] chars = str.toCharArray();
+        StringBuilder strBuilder = new StringBuilder();
+        for (char c: chars) {
+            if (Character.isLetter(c)) {
+                strBuilder.append(c);
             }
-            lettersInWord1.put(c, count);
         }
+        return strBuilder.toString();
     }
 }
